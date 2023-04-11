@@ -6,6 +6,9 @@ document.addEventListener("keydown", squareDeletion)
 document.addEventListener("keydown", createAll)
 let randomization 
 let lastNumber
+let cellsEmoji
+let range1 = Range(5,10)
+console.log(range1)
 function squareCreation(event)   
 {
     if (event.keyCode == 38)
@@ -92,10 +95,18 @@ function createAll(event)
 
 function turnBlackOnClick()
 {
-    this.classList.remove("blue")           //Remove color classes 
-    this.classList.remove("violet")
-    this.classList.remove("silver")
-    this.classList.remove("grey")
-    this.classList.add("black")
-    alert("aaa")
+    if (this ==  wrapperQuerySelector.childNodes[7])
+    {
+        this.classList.remove("blue")           //Remove color classes 
+        this.classList.remove("violet")
+        this.classList.remove("silver")
+        this.classList.remove("grey")
+        this.classList.add("black")
+        alert("aaa")        
+    }
+
 }
+function Range(beginRange, endRange)    //This function will let us build ranges for arrays containing emoji cells 
+{
+    return Array.from(Array(endRange - beginRange + 1).keys()).map( x=> beginRange + x)     // +1 because index starts at 0 and we'll miss one number without it. We give the beginning and the end of array 
+}                                                                                           //  we want. Array.from always starts at 0 so we use .map to transform the initial array 
