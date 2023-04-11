@@ -46,7 +46,8 @@ function createAll(event)
 {
     if (event.keyCode == 39)
     {
-        for(var x = 0; x < 225; x++) 
+        wrapperQuerySelector.replaceChildren()                                  //Replace all child nodes of wrapper with none to clear the page 
+        for(var x = 0; x < 225; x++)                                            //The emoji needs a 15*15 board
         {
             const SquareClone = newSquareCreateDiv.cloneNode()                  //Cloning nodes so we pop a square each time event is called       
             randomization = Math.random()                                       //Variable taking a random number between 0 and 1
