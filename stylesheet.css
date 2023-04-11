@@ -1,0 +1,12 @@
+.blue
+{
+    display: flex;
+    height:60px;
+    width:60px;
+    background-color: blue;
+}
+.wrapper
+{
+    display: flex;
+    flex-wrap: wrap;
+}
