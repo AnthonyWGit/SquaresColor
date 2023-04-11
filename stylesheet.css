@@ -26,6 +26,13 @@
     width:60px;
     background-color: grey;
 }
+.black
+{
+    display: flex;
+    height:60px;
+    width:60px;
+    background-color: black
+}
 .wrapper
 {
     display: flex;
