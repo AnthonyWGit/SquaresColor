@@ -1,4 +1,5 @@
 const wrapperQuerySelector = document.querySelector(".wrapper")
+const squareQuerySelector = document.querySelector(".square")
 const newSquareCreateDiv = document.createElement("div")
 document.addEventListener("keydown", squareCreation)          //Will pop up squares ib the screen
 document.addEventListener("keydown", squareDeletion)
@@ -13,24 +14,29 @@ function squareCreation(event)
         randomization = Math.random()                                       //Variable taking a random number between 0 and 1
         console.log(randomization)                                          //Debug tracker
         wrapperQuerySelector.SquareClone
+        SquareClone.addEventListener("click",turnBlackOnClick)
         if (randomization < (1/4))                                                  //I want equal probabilities so i do (1 / number of colors) and assign a color for each range
         {
             SquareClone.classList.add("blue")
+            SquareClone.classList.add("square")
             wrapperQuerySelector.appendChild(SquareClone)        
         }
         else if ((randomization >= (1/4) && randomization < (1/2)))
         {
             SquareClone.classList.add("violet")
+            SquareClone.classList.add("square")
             wrapperQuerySelector.appendChild(SquareClone)        
         }
         else if ((randomization >= (1/2) && randomization < (3/4)))
         {
             SquareClone.classList.add("silver")
+            SquareClone.classList.add("square")
             wrapperQuerySelector.appendChild(SquareClone)        
         }
         else 
         {
             SquareClone.classList.add("grey")
+            SquareClone.classList.add("square")
             wrapperQuerySelector.appendChild(SquareClone)        
         }
 
@@ -55,28 +61,41 @@ function createAll(event)
             randomization = Math.random()                                       //Variable taking a random number between 0 and 1
             console.log(randomization)                                          //Debug tracker
             wrapperQuerySelector.SquareClone
+            SquareClone.addEventListener("click",turnBlackOnClick)
             if (randomization < (1/4))                                                  //I want equal probabilities so i do (1 / number of colors) and assign a color for each range
             {
                 SquareClone.classList.add("blue")       
+                SquareClone.classList.add("square")
                 wrapperQuerySelector.appendChild(SquareClone)     
             }
             else if ((randomization >= (1/4) && randomization < (1/2)))
             {
                 SquareClone.classList.add("violet")      
+                SquareClone.classList.add("square")
                 wrapperQuerySelector.appendChild(SquareClone)     
             }
             else if ((randomization >= (1/2) && randomization < (3/4)))
             {
                 SquareClone.classList.add("silver")
+                SquareClone.classList.add("square")
                 wrapperQuerySelector.appendChild(SquareClone)     
             }
             else 
             {
                 SquareClone.classList.add("grey")
+                SquareClone.classList.add("square")
                 wrapperQuerySelector.appendChild(SquareClone)     
             }
-
         }        
     }
-    // Create numerous list items, add to fragment
+}
+
+function turnBlackOnClick()
+{
+    this.classList.remove("blue")           //Remove color classes 
+    this.classList.remove("violet")
+    this.classList.remove("silver")
+    this.classList.remove("grey")
+    this.classList.add("black")
+    alert("aaa")
 }
