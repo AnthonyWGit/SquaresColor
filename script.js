@@ -3,6 +3,7 @@ const newSquareCreateDiv = document.createElement("div")
 document.addEventListener("keyup", squareCreation)          //Will pop up squares ib the screen
 document.addEventListener("click", squareDeletion)
 let randomization 
+let lastNumber
 
 function squareCreation()
 {
@@ -35,5 +36,5 @@ function squareCreation()
 }
 function squareDeletion()                                                       //This will remove the last square created | errors are not cool so check if we created a square or not
 {
-    wrapperQuerySelector.children.length == 0 ? null : wrapperQuerySelector.removeChild(wrapperQuerySelector.children[0])
+    if (wrapperQuerySelector.children.length !== 0) wrapperQuerySelector.removeChild(wrapperQuerySelector.lastChild) //We use lastChild to target the last square we created by clicking
 }
