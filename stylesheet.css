@@ -1,40 +1,36 @@
 .blue
 {
-    display: flex;
     height:60px;
     width:60px;
     background-color: blue;
 }
 .violet
 {
-    display: flex;
     height:60px;
     width:60px;
     background-color: violet;
 }
 .silver
 {
-    display: flex;
     height:60px;
     width:60px;
     background-color: silver;
 }
 .grey
 {
-    display: flex;
     height:60px;
     width:60px;
     background-color: grey;
 }
 .black
 {
-    display: flex;
     height:60px;
     width:60px;
     background-color: black
 }
 .wrapper
 {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(15, 60px);
+    grid-template-rows: repeat(15, 60px);
 }
