@@ -92,12 +92,26 @@ function turnBlackOnClick()
         this.classList.remove("grey")
         this.classList.add("black")
     }
-        
     });
 }
 function Range(beginRange, endRange)    //This function will let us build ranges for arrays containing emoji cells 
 {
     return Array.from(Array(endRange - beginRange + 1).keys()).map( x => beginRange + x)     // +1 because index starts at 0 and we'll miss one number without it. We give the beginning and the end of array 
+}
+
+function instantEmoji(event)
+{
+    if (event.keyCode == 32) 
+    {
+        cellsEmoji.forEach(element => 
+            {                         //Foreach so we can go through all the numbers is the huge range we created 
+                wrapperQuerySelector.children[element - 1].classList.remove("blue")           //Remove color classes 
+                wrapperQuerySelector.children[element - 1].classList.remove("violet")
+                wrapperQuerySelector.children[element - 1].classList.remove("silver")
+                wrapperQuerySelector.children[element - 1].classList.remove("grey")
+                wrapperQuerySelector.children[element - 1].classList.add("black")
+            })
+    }
 }
 //______________________________________________________________DOM selectors__________________________________
 const wrapperQuerySelector = document.querySelector(".wrapper")
@@ -107,6 +121,7 @@ const newSquareCreateDiv = document.createElement("div")
 document.addEventListener("keydown", squareCreation)          //Will pop up squares ib the screen
 document.addEventListener("keydown", squareDeletion)
 document.addEventListener("keydown", createAll)
+document.addEventListener("keydown", instantEmoji)
 //_________________________________________________________________Variables________________________________________________
 let randomization 
 let lastNumber
