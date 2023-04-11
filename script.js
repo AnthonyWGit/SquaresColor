@@ -6,7 +6,10 @@ document.addEventListener("keydown", squareDeletion)
 document.addEventListener("keydown", createAll)
 let randomization 
 let lastNumber
-let cellsEmoji = Range(6,10).concat(Range(19,20))
+let cellsEmoji = Range(6,10).concat(Range(19,20)).concat(Range(26,27)).concat(33).concat(43).concat(47).concat(59).concat(62).concat(74).concat(Range(76,90)).concat(91)
+                .concat(Range(93,94)).concat(Range(97,100)).concat(103).concat(Range(105,106)).concat(Range(108,110)).concat(112).concat(Range(114,116)).concat(118).concat(Range(120,121))
+                .concat(Range(124,126)).concat(Range(130,132)).concat(Range(135,136)).concat(150).concat(152).concat(155).concat(164).concat(167).concat(Range(171,174)).concat(179)
+                .concat(183).concat(193).concat(Range(199,200)).concat(Range(206,207)).concat(Range(216,220))
 console.log(cellsEmoji)
 
 function squareCreation(event)   
@@ -95,7 +98,9 @@ function createAll(event)
 
 function turnBlackOnClick()
 {
-    if (this ==  wrapperQuerySelector.childNodes[7])
+    cellsEmoji.forEach(element => {
+
+    if (this == wrapperQuerySelector.children[element])
     {
         this.classList.remove("blue")           //Remove color classes 
         this.classList.remove("violet")
@@ -104,6 +109,8 @@ function turnBlackOnClick()
         this.classList.add("black")
         alert("aaa")        
     }
+        
+    });
 
 }
 function Range(beginRange, endRange)    //This function will let us build ranges for arrays containing emoji cells 
