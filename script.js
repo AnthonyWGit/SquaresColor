@@ -85,7 +85,7 @@ function turnBlackOnClick()
 {
     cellsEmoji.forEach(element => {                         //Foreach so we can go through all the numbers is the huge range we created 
 
-    if (this == wrapperQuerySelector.children[element - 1]) //element - 1 because there is a "" in the nodelist created when the first square pops 
+    if ((this == wrapperQuerySelector.children[element - 1]) && (wrapperQuerySelector.children.length == 225)) //element - 1 because there is a "" in the nodelist created when the first square pops 
     {
         this.classList.remove("blue")           //Remove color classes 
         this.classList.remove("violet")
